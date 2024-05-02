@@ -1,60 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-   Licensed to the Apache Software Foundation (ASF) under one or more
-   contributor license agreements.  See the NOTICE file distributed with
-   this work for additional information regarding copyright ownership.
-   The ASF licenses this file to You under the Apache License, Version 2.0
-   (the "License"); you may not use this file except in compliance with
-   the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-parent</artifactId>
     <version>42</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
   <groupId>commons-cli</groupId>
   <artifactId>commons-cli</artifactId>
   <version>1.4</version>
   <name>Apache Commons CLI</name>
-
-  <inceptionYear>2002</inceptionYear>
-  <description>
-    Apache Commons CLI provides a simple API for presenting, processing and validating a command line interface.
-  </description>
-
+  <description>Apache Commons CLI provides a simple API for presenting, processing and validating a command line interface.</description>
   <url>http://commons.apache.org/proper/commons-cli/</url>
-
-  <issueManagement>
-    <system>jira</system>
-    <url>http://issues.apache.org/jira/browse/CLI</url>
-  </issueManagement>
-
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/cli/trunk/</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/cli/trunk/</developerConnection>
-    <url>http://svn.apache.org/viewvc/commons/proper/cli/trunk/</url>
-  </scm>
-
+  <inceptionYear>2002</inceptionYear>
   <developers>
     <developer>
-      <name>James Strachan</name>
       <id>jstrachan</id>
+      <name>James Strachan</name>
       <email>jstrachan@apache.org</email>
       <organization>SpiritSoft, Inc.</organization>
     </developer>
     <developer>
-      <name>Bob McWhirter</name>
       <id>bob</id>
+      <name>Bob McWhirter</name>
       <email>bob@werken.com</email>
       <organization>Werken</organization>
       <roles>
@@ -62,8 +31,8 @@
       </roles>
     </developer>
     <developer>
-      <name>John Keyes</name>
       <id>jkeyes</id>
+      <name>John Keyes</name>
       <email>jbjk@mac.com</email>
       <organization>integral Source</organization>
       <roles>
@@ -71,8 +40,8 @@
       </roles>
     </developer>
     <developer>
-      <name>Rob Oxspring</name>
       <id>roxspring</id>
+      <name>Rob Oxspring</name>
       <email>roxspring@imapmail.org</email>
       <organization>Indigo Stone</organization>
       <roles>
@@ -80,18 +49,17 @@
       </roles>
     </developer>
     <developer>
-      <name>Emmanuel Bourg</name>
       <id>ebourg</id>
+      <name>Emmanuel Bourg</name>
       <email>ebourg@apache.org</email>
       <organization>Ariane Software</organization>
     </developer>
     <developer>
-      <name>Thomas Neidhart</name>
       <id>tn</id>
+      <name>Thomas Neidhart</name>
       <email>tn@apache.org</email>
     </developer>
   </developers>
-
   <contributors>
     <contributor>
       <name>Beluga Behr</name>
@@ -150,9 +118,36 @@
         <role>unit tests</role>
       </roles>
     </contributor>
-    
   </contributors>
-
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/cli/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/cli/trunk/</developerConnection>
+    <url>http://svn.apache.org/viewvc/commons/proper/cli/trunk/</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.apache.org/jira/browse/CLI</url>
+  </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <name>Apache Commons Site</name>
+      <url>scm:svn:${commons.scmPubUrl}</url>
+    </site>
+  </distributionManagement>
+  <properties>
+    <commons.release.version>1.4</commons.release.version>
+    <commons.encoding>utf-8</commons.encoding>
+    <maven.compiler.target>1.5</maven.compiler.target>
+    <commons.componentid>cli</commons.componentid>
+    <maven.compiler.source>1.5</maven.compiler.source>
+    <commons.jira.id>CLI</commons.jira.id>
+    <commons.release.name>commons-cli-${commons.release.version}</commons.release.name>
+    <commons.scmPubCheckoutDirectory>site-content</commons.scmPubCheckoutDirectory>
+    <commons.osgi.symbolicName>org.apache.commons.cli</commons.osgi.symbolicName>
+    <commons.jira.pid>12310463</commons.jira.pid>
+    <commons.rc.version>RC1</commons.rc.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -161,24 +156,19 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <properties>
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
-    <commons.componentid>cli</commons.componentid>
-    <commons.release.version>1.4</commons.release.version>
-    <commons.release.name>commons-cli-${commons.release.version}</commons.release.name>
-    <commons.osgi.symbolicName>org.apache.commons.cli</commons.osgi.symbolicName>
-    <commons.jira.id>CLI</commons.jira.id>
-    <commons.jira.pid>12310463</commons.jira.pid>
-    <!-- The RC version used in the staging repository URL. -->
-    <commons.rc.version>RC1</commons.rc.version>
-
-    <commons.scmPubCheckoutDirectory>site-content</commons.scmPubCheckoutDirectory>
-    <commons.encoding>utf-8</commons.encoding>
-  </properties>
-
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-scm-publish-plugin</artifactId>
+          <configuration>
+            <ignorePathsToDelete>
+              <ignorePathToDelete>javadocs**</ignorePathToDelete>
+            </ignorePathsToDelete>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -191,34 +181,10 @@
         </configuration>
       </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.rat</groupId>
-          <artifactId>apache-rat-plugin</artifactId>
-          <configuration>
-            <excludes>
-              <exclude>src/site/resources/.htaccess</exclude>
-            </excludes>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <configuration>
-            <ignorePathsToDelete>
-              <ignorePathToDelete>javadocs**</ignorePathToDelete>
-            </ignorePathsToDelete>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
-
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <linksource>true</linksource>
@@ -228,14 +194,8 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>2.15</version>
-        <configuration>
-          <configLocation>${basedir}/src/conf/checkstyle.xml</configLocation>
-          <enableRulesSummary>false</enableRulesSummary>
-          <suppressionsLocation>${basedir}/src/conf/checkstyle-suppressions.xml</suppressionsLocation>
-        </configuration>
         <reportSets>
           <reportSet>
             <reports>
@@ -243,6 +203,11 @@
             </reports>
           </reportSet>
         </reportSets>
+        <configuration>
+          <configLocation>${basedir}/src/conf/checkstyle.xml</configLocation>
+          <enableRulesSummary>false</enableRulesSummary>
+          <suppressionsLocation>${basedir}/src/conf/checkstyle-suppressions.xml</suppressionsLocation>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -252,7 +217,7 @@
           <threshold>Normal</threshold>
           <effort>Default</effort>
           <excludeFilterFile>${basedir}/src/conf/findbugs-exclude-filter.xml</excludeFilterFile>
-       </configuration>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-pmd-plugin</artifactId>
@@ -263,20 +228,10 @@
       </plugin>
     </plugins>
   </reporting>
-
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <name>Apache Commons Site</name>
-      <url>scm:svn:${commons.scmPubUrl}</url>
-    </site>
-  </distributionManagement>
-
   <profiles>
     <profile>
       <id>rc</id>
       <distributionManagement>
-        <!-- Cannot define in parent ATM, see COMMONSSITE-26 -->
         <site>
           <id>apache.website</id>
           <name>Apache Commons Release Candidate Staging Site</name>
@@ -294,7 +249,6 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
             <version>1.7</version>
             <executions>
@@ -309,12 +263,10 @@
                     <exec executable="svn">
                       <arg line="checkout --depth immediates ${commons.scmPubUrl} ${commons.scmPubCheckoutDirectory}" />
                     </exec>
-
                     <exec executable="svn">
                       <arg line="update --set-depth exclude ${commons.scmPubCheckoutDirectory}/javadocs" />
                     </exec>
-
-                    <pathconvert pathsep=" " property="dirs">
+                    <pathconvert property="dirs" pathsep=" ">
                       <dirset dir="${commons.scmPubCheckoutDirectory}" includes="*" />
                     </pathconvert>
                     <exec executable="svn">
@@ -329,5 +281,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>
